@@ -1,0 +1,188 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4858654520467866118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4858654520467866119}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4858654520467866119
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4858654520467866118}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.85, y: 1.83, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4858654520646018335}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4858654520646018305
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4858654520646018335}
+  - component: {fileID: 4858654520646018334}
+  - component: {fileID: 4858654520646018332}
+  - component: {fileID: 248572942}
+  - component: {fileID: 248572946}
+  - component: {fileID: 803566466}
+  m_Layer: 0
+  m_Name: _GM
+  m_TagString: GM
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4858654520646018335
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4858654520646018305}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4858654520467866119}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4858654520646018334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4858654520646018305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b4c4f64263d5746a11a12781a1c7c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgrounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  smoothing: 1
+--- !u!114 &4858654520646018332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4858654520646018305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd596914e894264d8b69ff7d6f9599d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLives: 3
+  startingMoney: 100
+  playerPrefab: {fileID: 400002, guid: 87a2357765801c34292d6718d8b4d770, type: 3}
+  spawnPoint: {fileID: 4858654520467866119}
+  spawnDelay: 3.5
+  spawnPrefab: {fileID: 8731848267026059856, guid: dcbf39ffb6548cc4084f28dc4c78a011, type: 3}
+  respawnCountdownSoundName: RespawnCountdown
+  spawnSoundName: Spawn
+  gameOverSoundName: GameOver
+  gameWinSoundName: GameWin
+  cameraShake: {fileID: 248572946}
+  gameOverUI: {fileID: 0}
+  gameWinUI: {fileID: 0}
+  upgradeMenu: {fileID: 0}
+  waveSpawner: {fileID: 248572942}
+--- !u!114 &248572942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4858654520646018305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb3380be206fcee4aad4336cfd53d716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - name: Alien Invasion
+    enemy: {fileID: 7755735216385398250, guid: 7299fb583a17dcf4e97af76d7ae42cd1, type: 3}
+    count: 2
+    rate: 1
+  - name: Alien Invasion 2.0
+    enemy: {fileID: 7755735216385398250, guid: 7299fb583a17dcf4e97af76d7ae42cd1, type: 3}
+    count: 3
+    rate: 1.5
+  - name: Alien Invasion 2.1
+    enemy: {fileID: 7755735216385398250, guid: 7299fb583a17dcf4e97af76d7ae42cd1, type: 3}
+    count: 5
+    rate: 2
+  - name: Alien Invasion 2.2
+    enemy: {fileID: 7755735216385398250, guid: 7299fb583a17dcf4e97af76d7ae42cd1, type: 3}
+    count: 10
+    rate: 2.5
+  - name: Alien Invasion 2.3
+    enemy: {fileID: 7755735216385398250, guid: 7299fb583a17dcf4e97af76d7ae42cd1, type: 3}
+    count: 20
+    rate: 3
+  - name: Alien Invasion 2.4
+    enemy: {fileID: 7755735216385398250, guid: 7299fb583a17dcf4e97af76d7ae42cd1, type: 3}
+    count: 50
+    rate: 3.5
+  - name: Alien Invasion 2.5
+    enemy: {fileID: 7755735216385398250, guid: 7299fb583a17dcf4e97af76d7ae42cd1, type: 3}
+    count: 60
+    rate: 4
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  timeBetweenWaves: 4
+--- !u!114 &248572946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4858654520646018305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdb07785769d7a4d8d031d898fc4c69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCam: {fileID: 0}
+--- !u!114 &803566466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4858654520646018305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f3db21fc10a9c428e19d8d712db4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthRegenRate: 2
+  movementSpeed: 10
